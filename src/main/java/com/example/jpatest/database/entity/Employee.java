@@ -1,5 +1,6 @@
 package com.example.jpatest.database.entity;
 
+import com.example.jpatest.constants.EmployeeRole;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,4 +34,10 @@ public class Employee {
     @Column(nullable = false)
     private EmployeeRole role;
 
+    public Employee(String name, String email, LocalDate birthDate, EmployeeRole role) {
+        this.name = name;
+        this.email = email;
+        this.birthDate = birthDate;
+        this.role = role;
+    }
 }
