@@ -22,7 +22,7 @@ public abstract class BaseBusiness {
 
     public Object changeRequest(Object object){
         EmployeeRequest employeeRequest = (EmployeeRequest) object;
-        return new Employee(employeeRequest.getName(),employeeRequest.getEmail(),employeeRequest.getBirthDate(),employeeRequest.getRole());
+        return new Employee(employeeRequest.getName(),employeeRequest.getEmail(),employeeRequest.getBirthDate(),employeeRequest.getRole(),employeeRequest.getAddress());
     }
     public boolean checkEmailDuplicate(String email,String originalEmail){
         if(email.equals(originalEmail)) return false;
