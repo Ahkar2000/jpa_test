@@ -39,11 +39,17 @@ public class Employee {
     @JoinColumn(name = "address_id")
     private Address address;
 
-    public Employee(String name, String email, LocalDate birthDate, EmployeeRole role,Address address) {
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
+
+    public Employee(String name, String email, LocalDate birthDate, EmployeeRole role,Address address,Department department) {
         this.name = name;
         this.email = email;
         this.birthDate = birthDate;
         this.role = role;
         this.address = address;
+        this.department = department;
     }
+
 }
