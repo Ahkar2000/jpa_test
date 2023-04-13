@@ -5,8 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
 
 @Data
 @AllArgsConstructor
@@ -14,6 +12,5 @@ import javax.validation.constraints.NotNull;
 public class DepartmentRequest {
 
     @NotBlank
-    @NotNull
     private String departmentName;
 }

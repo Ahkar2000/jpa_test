@@ -29,6 +29,11 @@ public class EmployeeController {
         return ResponseEntity.ok(inquiryEmployee.getEmployee());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<BaseResponse> getEmployeeById(@PathVariable Long id){
+        return ResponseEntity.ok(inquiryEmployee.getEmployeeById(id));
+    }
+
     @PostMapping("/create")
     public ResponseEntity<BaseResponse> saveEmployee(@Valid @RequestBody EmployeeRequest employee){
         return ResponseEntity.ok(createEmployee.saveEmployee(employee));

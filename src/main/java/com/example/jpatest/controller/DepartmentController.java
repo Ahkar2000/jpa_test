@@ -5,7 +5,6 @@ import com.example.jpatest.business.department.create.CreateDepartment;
 import com.example.jpatest.business.department.create.dto.DepartmentRequest;
 import com.example.jpatest.business.department.inquiry.InquiryDepartment;
 import com.example.jpatest.business.department.update.UpdateDepartment;
-import com.example.jpatest.database.entity.Department;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,15 +12,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path = {"/api/department"})
 public class DepartmentController {
     private final InquiryDepartment inquiryDepartment;
+    private final CreateDepartment createDepartment;
+    private final UpdateDepartment updateDepartment;
 
     public DepartmentController(InquiryDepartment inquiryDepartment, CreateDepartment createDepartment, UpdateDepartment updateDepartment) {
         this.inquiryDepartment = inquiryDepartment;
         this.createDepartment = createDepartment;
         this.updateDepartment = updateDepartment;
     }
-
-    private final CreateDepartment createDepartment;
-    private final UpdateDepartment updateDepartment;
 
     @GetMapping
     public ResponseEntity<BaseResponse> getDepartment(){

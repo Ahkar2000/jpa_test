@@ -40,7 +40,7 @@ public abstract class BaseBusiness {
 
     public boolean checkDepartmentName(String name,String originalName){
         if(name.equals(originalName)) return false;
-        Optional<Department> department = departmentRepository.findDepartmentByName(name);
+        Optional<Department> department = departmentRepository.findDepartmentByDepartmentName(name);
         return department.isPresent();
     }
 
@@ -53,8 +53,4 @@ public abstract class BaseBusiness {
         return new Address(addressRequest.getStreetName(),addressRequest.getHouseNumber(),addressRequest.getCityName());
     }
 
-    public Object changeDepartmentRequest(Object object){
-        DepartmentRequest departmentRequest = (DepartmentRequest) object;
-        return new Department(departmentRequest.getDepartmentName());
-    }
 }

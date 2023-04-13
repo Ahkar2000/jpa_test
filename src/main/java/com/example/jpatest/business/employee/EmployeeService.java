@@ -21,5 +21,13 @@ public class EmployeeService implements EmployeeServiceIf{
     @Override
     public void deleteById(Long id){
         employeeRepository.deleteById(id);
-    };
+    }
+
+    @Override
+    public Employee getEmployeeById(Long id) {
+        return employeeRepository.findById(id).get();
+    }
+
+    ;
+
 }

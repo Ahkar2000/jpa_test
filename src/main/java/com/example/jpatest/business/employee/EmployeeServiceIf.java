@@ -7,5 +7,6 @@ public interface EmployeeServiceIf {
     public List<Employee> getEmployee();
     public Employee save(Employee employee);
     public void deleteById(Long id);
+    public Employee getEmployeeById(Long id);
 
 }

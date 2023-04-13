@@ -21,7 +21,7 @@ public class CreateDepartment extends BaseBusiness implements CreateDepartmentIf
         if(checkDepartmentName(departmentRequest.getDepartmentName(),null)){
             throw new IllegalStateException("Department Name already exists.");
         }
-        Department department = (Department) changeDepartmentRequest(departmentRequest.getDepartmentName());
+        Department department = new Department(departmentRequest.getDepartmentName());
         departmentRepository.save(department);
         return generateDefaultResponse(department);
     }
